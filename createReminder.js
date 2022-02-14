@@ -20,7 +20,7 @@ exports.handler = async (event) => {
     Targets: [{
       Id: 'default',
       Arn: 'arn:aws:lambda:us-east-1:644200607727:function:sendEmail',
-      Input: JSON.stringify({ toEmailAddress: requestBody.toEmailAddress, emailContent: requestBody.reminderContent })
+      Input: JSON.stringify({ toEmailAddress: requestBody.toEmailAddress, emailContent: requestBody.reminderContent, ruleName: ruleParams.Name })
     }]
   };
 
