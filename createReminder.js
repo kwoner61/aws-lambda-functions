@@ -9,7 +9,7 @@ exports.handler = async (event) => {
 
   let ruleParams = {
     Name: "RemindMeInEvent_" + (Math.random() + "").substring(2, 7) + requestBody.requestId,
-    Description: requestBody.description || "Remind me in x",
+    Description: requestBody.cronExpression + " UTC",
     ScheduleExpression: requestBody.cronExpression,
     State: "ENABLED",
     Tags: [{ Key: 'billing', Value: 'remindmein' }]
